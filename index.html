@@ -15,10 +15,13 @@
     <!-- PREMIUM HEADER -->
     <header class="header">
         <div class="nav-container">
+            <!-- Brand -->
             <a href="#hero" class="nav-brand">
                 <div class="brand-icon">GY</div>
                 <span class="brand-name">Gali Yaswanth Sai</span>
             </a>
+
+            <!-- Desktop Navigation -->
             <nav class="nav-center">
                 <ul class="nav-links">
                     <li><a href="#hero">About</a></li>
@@ -27,13 +30,49 @@
                     <li><a href="#experience-education">Experience</a></li>
                 </ul>
             </nav>
+
+            <!-- Desktop Actions -->
             <div class="nav-actions">
                 <a href="https://github.com/ir19stark28" target="_blank" class="action-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/gysai10042141st" target="_blank" class="action-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://drive.google.com/file/d/1KWRqB2BMEqGWa4dzmQ8E4Sch76V-XaTA/view?usp=drive_link" target="_blank" class="btn-resume">Resume</a>
             </div>
+
+            <!-- Mobile Menu Toggle (Visible only on mobile) -->
+            <button class="mobile-toggle" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-header">
+            <!-- Left: Brand Initials -->
+            <div class="brand-icon mobile-brand-icon">GY</div>
+            
+            <!-- Center: Socials (moved here for mobile) -->
+            <div class="mobile-socials">
+                <a href="https://github.com/ir19stark28" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/gysai10042141st" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <!-- Right: Close Button -->
+            <button class="mobile-close" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Links (Reusing Desktop Tabs) -->
+        <ul class="mobile-nav-links">
+            <li><a href="#hero">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience-education">Experience</a></li>
+            <!-- Added Resume button here for easier mobile access -->
+            <li><a href="https://drive.google.com/file/d/1KWRqB2BMEqGWa4dzmQ8E4Sch76V-XaTA/view?usp=drive_link" target="_blank" class="mobile-resume-link">Resume</a></li>
+        </ul>
+    </div>
 
     <main class="container">
         <!-- HERO SECTION -->
@@ -78,7 +117,7 @@
                     <div class="skill-item"><i class="fab fa-html5"></i> HTML</div>
                     <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS</div>
                     <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
-                    <!-- Duplicates for loop -->
+                    <!-- Duplicates -->
                     <div class="skill-item"><i class="fab fa-python"></i> Python</div>
                     <div class="skill-item"><i class="fas fa-code"></i> C</div>
                     <div class="skill-item"><i class="fas fa-eye"></i> OpenCV</div>
@@ -95,7 +134,7 @@
             </div>
         </section>
 
-        <!-- 
+         <!-- 
             UPDATED PROJECTS SECTION 
             - SaaS Style Layout
             - 2 Column Grid
@@ -168,8 +207,7 @@
                 
             </div>
         </section>
-
-        <!-- EXPERIENCE & EDUCATION -->
+       <!-- EXPERIENCE & EDUCATION -->
         <section id="experience-education" class="section split-section">
             <div class="split-container">
                 <!-- Left Column: Experience -->
