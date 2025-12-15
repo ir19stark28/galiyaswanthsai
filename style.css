@@ -225,7 +225,109 @@ a {
 }
 
 /* ---------------------------------------------------------------- */
-/* 4. HERO SECTION & BADGE                                          */
+/* 4. MOBILE MENU STYLES                                            */
+/* ---------------------------------------------------------------- */
+
+.mobile-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Full Screen Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(2, 12, 27, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.mobile-menu-overlay.active {
+    transform: translateX(0);
+}
+
+/* Mobile Header within Overlay */
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.mobile-brand-icon {
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+}
+
+.mobile-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.mobile-socials a {
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    transition: color 0.3s;
+}
+.mobile-socials a:hover { color: var(--accent); }
+
+.mobile-close {
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.mobile-close:hover { color: var(--accent); }
+
+/* Mobile Links */
+.mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    height: 100%;
+}
+
+.mobile-nav-links a {
+    font-size: 1.8rem;
+    color: var(--text-heading);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.mobile-nav-links a:active {
+    color: var(--accent);
+}
+
+.mobile-resume-link {
+    color: var(--accent) !important;
+    border: 1px solid var(--accent);
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    font-size: 1.2rem !important;
+}
+
+/* ---------------------------------------------------------------- */
+/* 5. HERO SECTION & BADGE                                          */
 /* ---------------------------------------------------------------- */
 
 .hero-section {
@@ -326,7 +428,7 @@ a {
 
 .img-placeholder {
     width: 350px;
-    height: 400px;
+    height: 350px;
     background: linear-gradient(135deg, #112240, #233554);
     border-radius: 50%;
     display: flex;
@@ -336,7 +438,6 @@ a {
     box-shadow: 0 0 30px rgba(100, 255, 218, 0.1);
     position: relative;
 }
-
 .img-placeholder {
     overflow: hidden; /* 🔑 THIS is mandatory */
 }
@@ -350,14 +451,13 @@ a {
     top: 0;
     left: 0;
 }
-
 .img-placeholder i {
     font-size: 8rem;
     color: var(--accent);
 }
 
 /* ---------------------------------------------------------------- */
-/* 5. SKILLS MARQUEE                                                */
+/* 6. SKILLS MARQUEE                                                */
 /* ---------------------------------------------------------------- */
 
 .skills-wrapper {
@@ -394,7 +494,7 @@ a {
 }
 
 /* ---------------------------------------------------------------- */
-/* 6. PROJECTS SECTION (PREMIUM SAAS STYLE)                         */
+/* 7. PROJECTS SECTION                                              */
 /* ---------------------------------------------------------------- */
 
 .projects-section {
@@ -443,7 +543,7 @@ a {
 /* Project Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Desktop: 2 Columns */
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -473,7 +573,7 @@ a {
 }
 
 .card-img-placeholder {
-    height: 220px; /* 16:9ish aspect */
+    height: 220px; 
     width: 100%;
     display: flex;
     align-items: center;
@@ -481,26 +581,6 @@ a {
     position: relative;
 }
 
-.card-img-placeholder {
-    position: relative;
-    overflow: hidden; /* 🔑 ensures clean crop */
-}
-
-.card-img-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;          /* fills tile */
-    object-position: center;    /* crops from center */
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 0.4s ease;
-}
-.card-image-link:hover .card-img-placeholder img {
-    transform: scale(1.08);
-}
-
-/* Gradients for placeholders */
 .gradient-1 { background: linear-gradient(135deg, #233554 0%, #0a192f 100%); }
 .gradient-2 { background: linear-gradient(135deg, #1d335c 0%, #112240 100%); }
 
@@ -585,7 +665,7 @@ a {
 }
 
 /* ---------------------------------------------------------------- */
-/* 7. EXPERIENCE & EDUCATION                                        */
+/* 8. EXPERIENCE & EDUCATION                                        */
 /* ---------------------------------------------------------------- */
 
 .split-container {
@@ -672,6 +752,7 @@ a {
     padding-bottom: 1rem;
 }
 .honors-list strong { color: var(--text-heading); }
+
 .honors-link {
     display: inline-flex;
     align-items: center;
@@ -691,9 +772,8 @@ a {
     transform: translateX(4px);
 }
 
-
 /* ---------------------------------------------------------------- */
-/* 8. CONTACT & FOOTER                                              */
+/* 9. CONTACT & FOOTER                                              */
 /* ---------------------------------------------------------------- */
 
 .contact-section {
@@ -721,11 +801,19 @@ a {
 .footer-content h3 { color: var(--text-heading); }
 
 /* ---------------------------------------------------------------- */
-/* 9. RESPONSIVE DESIGN                                             */
+/* 10. RESPONSIVE DESIGN (UPDATED)                                  */
 /* ---------------------------------------------------------------- */
 
-@media (max-width: 992px) {
-    .nav-links { display: none; }
+@media (max-width: 768px) {
+    /* Hide Desktop Nav and Actions */
+    .nav-center, .nav-actions {
+        display: none;
+    }
+
+    /* Show Mobile Toggle */
+    .mobile-toggle {
+        display: block;
+    }
 
     .hero-section {
         flex-direction: column-reverse;
@@ -743,10 +831,6 @@ a {
     .img-placeholder { width: 250px; height: 250px; }
     .img-placeholder i { font-size: 5rem; }
     
-    .nav-actions .action-icon { display: none; }
-    .btn-resume { display: block; }
-    
-    /* Responsive Projects */
     .projects-header {
         flex-direction: column;
         align-items: flex-start;
@@ -754,6 +838,6 @@ a {
     }
     
     .projects-grid {
-        grid-template-columns: 1fr; /* Mobile: 1 Column */
+        grid-template-columns: 1fr;
     }
 }
