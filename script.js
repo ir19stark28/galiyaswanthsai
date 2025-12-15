@@ -5,7 +5,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.reveal');
 
-    // Configuration for the Intersection Observer
     const options = {
         root: null,
         rootMargin: '0px',
@@ -24,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+    // Mobile Menu Logic
+    initMobileMenu();
 });
 
 /* ---------------------------------------------------------------- */
@@ -39,7 +41,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                // Adjust for sticky header height
                 const headerHeight = document.querySelector('.header').offsetHeight;
                 const topPosition = targetElement.offsetTop - headerHeight;
                 
@@ -51,3 +52,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+/* ---------------------------------------------------------------- */
+/* 3. MOBILE MENU TOGGLE                                            */
+/* ---------------------------------------------------------------- */
+
+function initMobileMenu() {
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const mobileClose = document.querySelector('.mobile-close');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+    if (!mobileToggle || !mobileOverlay) return;
+
+    // Open Menu
+    mobileToggle.addEventListener('click', () => {
+        mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+
+    // Close Menu Function
+    const closeMenu = () => {
+        mobileOverlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    };
+
+    // Close on X button click
+    if (mobileClose) {
+        mobileClose.addEventListener('click', closeMenu);
+    }
+
+    // Close when clicking a link
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+}
